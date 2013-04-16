@@ -8,7 +8,9 @@ A simple PHP flight boilerplate that I use often. Based off of the Flight extens
 require_once('flight/Flight.php');
 
 /* Configuration */
-Flight::register('db', 'PDO', array('hostname','database','username','password'));
+Flight::register('db', 'PDO', array('mysql:host=localhost;port=3306;dbname=database', 'username', 'password'), function($db) {
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+});
 // $db = Flight::db();
 
 /* Document Functions */
