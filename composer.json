@@ -1,6 +1,21 @@
 {
+    "name": "flight/boilerplate",
+    "description": "A simple boilerplate for the Flight PHP framework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zach Queal",
+            "email": "zach.queal@gmail.com"
+        },
+        {
+            "name": "Mike Cao",
+            "email": "mike@mikecao.com",
+            "homepage": "http://www.mikecao.com/",
+            "role": "Original Developer"
+        }
+    ],
     "require": {
+        "php": ">=5.4.17",
         "mikecao/flight": "dev-master"
     }
 }
-          
