@@ -1,7 +1,7 @@
 Flight Boilerplate
 ==================
 
-A simple PHP flight boilerplate that I use often. Based off of the Flight extensible PHP micro-framework: <http://github.com/mikecao/flight>
+A simple boilerplate based off of the [Flight](http://github.com/mikecao/flight) PHP framework.
 
 ```php
 /* Required Documents */
