@@ -23,8 +23,8 @@ Flight::route('GET /', function(){
   echo 'Hello World!';
 });
 
-Flight::route('POST /', function(){
-  echo 'This is a POST request';
+Flight::route('POST /@name', function($name){
+  echo 'Hello, '. $name . ', how are you?';
 });
 
 Flight::route('/help', 'help');
