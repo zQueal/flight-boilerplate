@@ -1,36 +1,38 @@
 <?php
 
-/* Required Documents */
-require_once('flight/Flight.php');
+# Required Documents
+require 'vendor/autoload.php'); # for use with composer
 
-/* Configuration */
-Flight::register('db', 'Database', array('hostname','database','username','password'));
+# Configuration
+Flight::register('db', 'PDO', array('mysql:host=localhost;port=3306;dbname=database', 'username', 'password'), function($db) {
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+});
 // $db = Flight::db();
 
-/* Document Functions */
+# Functions
 function help(){
   echo 'This is your help documentation!';
 }
 
-/* Document Routes */
+# Routes
 Flight::route('GET /', function(){
   echo 'Hello World!';
 });
 
-Flight::route('POST /', function(){
-  echo 'This is a POST request';
+Flight::route('POST /@name', function($name){
+  echo 'Hello, '. $name . ', how are you?';
 });
 
 Flight::route('/help', 'help');
 
-/* Error Documents */
+# Error Documents
 function notFound(){
   echo 'The resource you are trying to view is not here.';
 }
 
 Flight::map('notFound', 'notFound');
 
-/* Execute the Document */
+# Execute
 Flight::start();
 
 ?>
